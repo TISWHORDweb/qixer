@@ -26,3 +26,4 @@ Route::get('/category', [UserController::class, 'category'])->name('category');
 Route::get('/contact', [UserController::class, 'contact'])->name('contact');
 Route::get('/service-list', [UserController::class, 'service_list'])->name('service-list');
 Route::get('/service-details', [UserController::class, 'service_details'])->name('service-details');
+Route::get('/blog-details', [UserController::class, 'blog_details'])->name('blog-details');

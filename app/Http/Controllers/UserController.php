@@ -38,4 +38,9 @@ class UserController extends Controller
     {
         return view('service-details');
     }
+    public function blog_details()
+    {
+        return view('blog-details');
+    }
+    
 }

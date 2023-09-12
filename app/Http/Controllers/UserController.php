@@ -34,4 +34,8 @@ class UserController extends Controller
     {
         return view('service-list');
     }
+    public function service_details()
+    {
+        return view('service-details');
+    }
 }

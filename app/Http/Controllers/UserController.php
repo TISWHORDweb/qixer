@@ -42,5 +42,8 @@ class UserController extends Controller
     {
         return view('blog-details');
     }
-    
+    public function faq()
+    {
+        return view('faq');
+    }
 }

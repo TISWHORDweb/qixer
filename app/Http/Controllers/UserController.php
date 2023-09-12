@@ -26,4 +26,8 @@ class UserController extends Controller
     {
         return view('category');
     }
+    public function contact()
+    {
+        return view('contact');
+    }
 }

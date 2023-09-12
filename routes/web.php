@@ -20,3 +20,6 @@ Route::get('/', function () {
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('/user', [UserController::class, 'user'])->name('user');
+Route::get('/about', [UserController::class, 'about'])->name('about');
+Route::get('/blog', [UserController::class, 'blog'])->name('blog');
+Route::get('/category', [UserController::class, 'category'])->name('category');

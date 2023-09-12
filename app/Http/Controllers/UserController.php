@@ -14,4 +14,16 @@ class UserController extends Controller
     {
         return view('user');
     }
+    public function about()
+    {
+        return view('about');
+    }
+    public function blog()
+    {
+        return view('blog');
+    }
+    public function category()
+    {
+        return view('category');
+    }
 }

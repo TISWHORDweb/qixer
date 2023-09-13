@@ -28,3 +28,7 @@ Route::get('/service-list', [UserController::class, 'service_list'])->name('serv
 Route::get('/service-details', [UserController::class, 'service_details'])->name('service-details');
 Route::get('/blog-details', [UserController::class, 'blog_details'])->name('blog-details');
 Route::get('/faq', [UserController::class, 'faq'])->name('faq');
+Route::get('/auth/signin', [UserController::class, 'faq'])->name('signin');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

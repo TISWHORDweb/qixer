@@ -1,6 +1,10 @@
 <?php
 
+// use App\Http\Controllers\AdminController;
+// use App\Http\Controllers\CommentController;
+// use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -9,26 +13,56 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/', [UserController::class, 'index'])->name('home');
-Route::get('/user', [UserController::class, 'user'])->name('user');
+
 Route::get('/about', [UserController::class, 'about'])->name('about');
 Route::get('/blog', [UserController::class, 'blog'])->name('blog');
+Route::get('/', [UserController::class, 'index'])->name('index');
 Route::get('/category', [UserController::class, 'category'])->name('category');
 Route::get('/contact', [UserController::class, 'contact'])->name('contact');
-Route::get('/service-list', [UserController::class, 'service_list'])->name('service-list');
+Route::get('/service', [UserController::class, 'service'])->name('service');
 Route::get('/service-details', [UserController::class, 'service_details'])->name('service-details');
 Route::get('/blog-details', [UserController::class, 'blog_details'])->name('blog-details');
 Route::get('/faq', [UserController::class, 'faq'])->name('faq');
-Route::get('/auth/signin', [UserController::class, 'faq'])->name('signin');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+// Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+// Route::get('/products/create', [ProductController::class, 'create'])->name('product.create');
+// Route::post('/products/store', [ProductController::class, 'store'])->name('product.store');
+
+
+// admin group routes
+// Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+//     Route::get('/products', [AdminController::class, 'adminShowAllProduct'])->name('admin.product.index');
+//     Route::get('/products/comments', [AdminController::class, 'adminGetAllComments'])->name('admin.comment.index');
+//     Route::delete('/products/delete/{id}', [AdminController::class, 'adminDeleteProduct'])->name('admin.product.delete');
+//     Route::delete('/products/comments/{id}', [AdminController::class, 'adminDeleteComment'])->name('admin.comment.delete');
+// });
+
+
+// Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
+// Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+// Route::post('/products/update/{id}', [ProductController::class, 'update'])->name('product.update');
+
+// //Route::get('products/{id}', [CommentController::class, 'loadComments'])->name('product.show');
+// Route::post('/products/{id}', [CommentController::class, 'addComment']);
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Route::get('/admin/products', [AdminController::class, 'adminShowAllProduct'])->name('admin.product.index');
+//Route::get('/admin/products/comments', [AdminController::class, 'adminGetAllComments'])->name('admin.comment.index');
+//Route::delete('/admin/products/delete/{id}', [AdminController::class, 'adminDeleteProduct'])->name('admin.product.delete');
+//Route::delete('/admin/products/comments/{id}', [AdminController::class, 'adminDeleteComment'])->name('admin.comment.delete');

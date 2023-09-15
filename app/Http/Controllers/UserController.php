@@ -10,10 +10,6 @@ class UserController extends Controller
     {
         return view('index');
     }
-    public function user()
-    {
-        return view('user');
-    }
     public function about()
     {
         return view('about');
@@ -30,9 +26,9 @@ class UserController extends Controller
     {
         return view('contact');
     }
-    public function service_list()
+    public function service()
     {
-        return view('service-list');
+        return view('service');
     }
     public function service_details()
     {
@@ -44,6 +40,14 @@ class UserController extends Controller
     }
     public function faq()
     {
-        return view('faq');
+        return view('f&q');
+    }
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
+    public function profile()
+    {
+        return view('profile');
     }
 }
